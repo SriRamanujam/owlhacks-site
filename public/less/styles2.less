@@ -1,0 +1,61 @@
+@red: #9e1b34;
+@blue: #6695af;
+@orange: #c76a30;
+@gold: #ccb366;
+@green: #898963;
+@black: #222222;
+@gray-black: #494949;
+@dark-blue: #2a3a53;
+@electric-blue: lighten(saturate(@blue, 70%),
+20%);
+@pale-blue: #e0e8ea;
+@blue-black: #232830;
+ body {
+     
+    footer {
+        background-color: @blue-black;
+
+color: darken(white, 10%);
+        font-family: 'Roboto Slab', serif;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 300;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        @media (max-width: 320px) {
+            font-size: 14px;
+        }
+        .glyphicon {
+            font-size: 22px;
+            padding: 0px 4px;
+            color: @red;
+
+position: relative;
+            bottom:0px;
+            @media (max-width: 320px) {
+                font-size: 18px;
+                top: 4px;
+                padding: 0px 2px;
+                padding-right: 3px;
+            }
+        }
+        #tudev-icon {
+            background-image: url(../img/icon-tudev.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            padding: 0px 14px;
+            width: 18px;
+            height: 20px;
+            display: inline-block;
+            position: relative;
+            opacity: 0.9;
+            top: 4px;
+            @media (max-width: 320px) {
+                padding: 0px 14px;
+                width: 16px;
+                height: 18px;
+            }
+        }
+    }
+}

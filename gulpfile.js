@@ -26,6 +26,10 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(gulp.dest('public/dist'));
 
+    gulp.src(['public/less/styles2.less'])
+        .pipe(less())
+        .pipe(gulp.dest('public/dist'));
+    
     gulp.src(['public/less/404.less'])
         .pipe(less())
         .pipe(gulp.dest('public/dist'));
