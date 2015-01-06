@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     bodyParser = require('body-parser'),
     crypto = require('crypto'),
     async = require('async'),
+//    react = require('gulp-react'),
     exec = require('child_process').exec,
     git = require('gulp-git'),
     http = require('http');
@@ -41,16 +42,20 @@ gulp.task('html-dev', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
         .pipe(replace('</body>', '<script src="http://localhost:35729/livereload.js"></script></body>'))
+        .pipe(replace('</head>', '<script src="http://fb.me/react-0.12.2.js"></script></head>'))
         .pipe(gulp.dest('public/dist/pages'));
     gulp.src(['public/partials/*.html'])
+        .pipe(replace('</head>', '<script src="http://fb.me/react-0.12.2.js"></script></head>'))
         .pipe(gulp.dest('public/dist/partials'));
 });
 
 gulp.task('html', function() {
     // Moves and Compresses HTML
     gulp.src(['public/pages/*.html'])
+ //       .pipe(react())
         .pipe(gulp.dest('public/dist/pages'));
     gulp.src(['public/partials/*.html'])
+//        .pipe(react())
         .pipe(gulp.dest('public/dist/partials'));
 });
 
@@ -121,7 +126,7 @@ gulp.task('githook', function() {
     http.createServer(app).listen(4000, '0.0.0.0')
 });
 
-gulp.task('watch', ['server-dev'], function() {
+gulp.task('watch', ['html-dev', 'server-dev'], function() {
     livereload.listen();
     gulp.watch('public/js/*.js', ['js']).on('change', livereload.changed);
     gulp.watch('public/less/*.less', ['less']).on('change', delay(livereload.changed, 500));
