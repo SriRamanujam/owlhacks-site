@@ -25,6 +25,14 @@ gulp.task('less', function() {
     gulp.src(['public/less/styles.less'])
         .pipe(less())
         .pipe(gulp.dest('public/dist'));
+    // To be removed after merging css styles to one file
+    gulp.src(['public/less/styles2.less'])
+        .pipe(less())
+        .pipe(gulp.dest('public/dist'));
+
+    gulp.src(['public/less/styles.less'])
+        .pipe(less())
+        .pipe(gulp.dest('public/dist'));
 
     gulp.src(['public/less/404.less'])
         .pipe(less())
