@@ -18,9 +18,14 @@ app.get('/sponsor.pdf', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'files', 'sponsor.pdf'));
 });
 
+app.get('/login', function(req, res) {
+    res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'pages', 'profile.html'));
+});
+
 app.get('/*', function(req, res) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'dist', 'pages', '404.html'));
 });
+
 
 app.listen(app.get('port'), function() {
     console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
