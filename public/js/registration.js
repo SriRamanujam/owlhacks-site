@@ -39,7 +39,7 @@
         var RegistrationFormSubmitButton = React.createClass({
           render: function() {
             return (
-              <div className="registrationFormSubmitButton"></div>
+              <button className="registrationFormSubmitButton"></button>
               );
           }
         });
@@ -47,7 +47,39 @@
 
         var RegistrationItem = React.createClass({
           render: function() {
-            return (<input type={this.props.type} placeholder={this.props.value} value="" />
+
+            if(this.props.name === "shirt-size"){
+              return (
+                <div>
+                <h2>Shirt Size</h2>
+                <input type={this.props.type} name ={this.props.name} value="Large" />
+                <input type={this.props.type} name ={this.props.name} value="Medium" />
+                <input type={this.props.type} name ={this.props.name} value="Small" />
+                </div>
+             );
+            }
+
+            else if(this.props.name === "first-hackathon"){
+              return (
+                <div>
+                <h2>First Hackathon?</h2>
+                <input type={this.props.type} name ={this.props.name} value="Yes" />
+                <input type={this.props.type} name ={this.props.name} value="No" />
+                </div>
+             );
+            }
+
+            else if(this.props.name === "hw-hack"){
+              return (
+                <div>
+                <h2>Hardware Hack?</h2>
+                <input type={this.props.type} name ={this.props.name} value="Yes" />
+                <input type={this.props.type} name ={this.props.name} value="No" />
+                </div>
+             );
+            }
+
+            return (<input type={this.props.type} placeholder={this.props.value} name = {this.props.name} value="" />
              );
           }
         });
