@@ -10,59 +10,88 @@
 20%);
 @pale-blue: #e0e8ea;
 @blue-black: #232830;
+
+
+/******************************sticky footer *********************************/
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, .page-wrap:after {
+  height: 50px; 
+}
+
+/*****************************************************************************/
+
 body {
 background-color: @dark-blue;
+
+
+
+
 main {
 
-display: flex;
-
-.side-div{
-}
+padding: 350px 0px;
 
 
-
-button{
-}
-
-
-form {
-    margin: 0 auto;
-    text-align: center;
-
-
-
-
-    input {
-        width: 300px;
+    form {
         margin: 0 auto;
         text-align: center;
-        color: #444;
-        background-color: white;
-        font-family: 'Roboto Slab', serif;
-        font-size: 22px;
-        font-weight: 300;
-        margin-bottom: 20px;
-        padding: 10px;
-        outline: 0 none;
-        border: none;
-        border-radius: 4px;
 
-        @media (max-width: 550px) {
-        width: 100%;
-        }
+        input {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            color: #444;
+            background-color: white;
+            font-family: 'Roboto Slab', serif;
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            padding: 10px;
+            outline: 0 none;
+            border: none;
+            border-radius: 4px;
 
-        @media (max-width: 320px) {
-        font-size: 18px;
+            @media (max-width: 550px) {
+            width: 100%;
+            }
+
+            @media (max-width: 320px) {
+            font-size: 18px;
+            }
         }
     }
-}
+
+    #buttons-div{
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        
+        button{
+            display:inline;
+            width: 150px;
+
+        }
+    }
 
 }
+
+
 
 footer {
-
-position: relative;
-bottom:0px;
 
 background-color: @blue-black;
 

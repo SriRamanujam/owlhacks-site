@@ -4,7 +4,6 @@
 
               <div className="registrationBox">
               <RegistrationFormOne />
-              <RegistrationFormSubmitButton />
               </div>
               );
           }
@@ -16,12 +15,14 @@
           render: function() {
             return (
               <form className="registrationFormOne">
-
+              <div>
               <RegistrationItem value = "First Name" name = "first-name" type = "text" />
               <RegistrationItem value = "Last Name" name = "last-name" type = "text" />
+              </div>
+              <div>
               <RegistrationItem value = "Email Address" name = "email-address" type = "text" />
               <RegistrationItem value = "School" name = "school" type = "text" />
-
+              </div>
               </form>
               );
           }
@@ -56,14 +57,6 @@
           }
         });
 
-        var RegistrationFormSubmitButton = React.createClass({
-          render: function() {
-            return (
-              <button className="registrationFormSubmitButton"></button>
-              );
-          }
-        });
-
 
         var RegistrationItem = React.createClass({
           render: function() {
@@ -76,7 +69,7 @@
                 <input type={this.props.type} name ={this.props.name} value="Medium" />
                 <input type={this.props.type} name ={this.props.name} value="Small" />
                 </div>
-             );
+                );
             }
 
             else if(this.props.name === "first-hackathon"){
@@ -86,7 +79,7 @@
                 <input type={this.props.type} name ={this.props.name} value="Yes" />
                 <input type={this.props.type} name ={this.props.name} value="No" />
                 </div>
-             );
+                );
             }
 
             else if(this.props.name === "hw-hack"){
@@ -96,7 +89,7 @@
                 <input type={this.props.type} name ={this.props.name} value="Yes" />
                 <input type={this.props.type} name ={this.props.name} value="No" />
                 </div>
-             );
+                );
             }
 
             return (<input type={this.props.type} placeholder={this.props.value} name = {this.props.name} value="" />
