@@ -3,34 +3,54 @@
             return (
 
               <div className="registrationBox">
-              <RegistrationForm />
+              <RegistrationFormOne />
               <RegistrationFormSubmitButton />
               </div>
               );
           }
         });
+        
 
 
-        var RegistrationForm = React.createClass({
+        var RegistrationFormOne = React.createClass({
           render: function() {
             return (
-              <form className="registrationForm">
+              <form className="registrationFormOne">
+
               <RegistrationItem value = "First Name" name = "first-name" type = "text" />
               <RegistrationItem value = "Last Name" name = "last-name" type = "text" />
               <RegistrationItem value = "Email Address" name = "email-address" type = "text" />
               <RegistrationItem value = "School" name = "school" type = "text" />
+
+              </form>
+              );
+          }
+        });
+
+        var RegistrationFormTwo = React.createClass({
+          render: function() {
+            return (
+              <form className="registrationFormTwo">
               <RegistrationItem value = "Shirt Size" name = "shirt-size" type = "radio" />
               <RegistrationItem value = "Food Restrictions" name = "food-restrictions" type = "text" />
               <RegistrationItem value = "First Hackathon?" name = "first-hackathon" type = "radio" />
               <RegistrationItem value = "Why Owlhacks?" name = "why-owlhacks" type = "text" />
               <RegistrationItem value = "Hardware Hack?" name = "hw-hack" type = "radio" />
               <RegistrationItem value = "Teammate Names?" name = "teammate-names" type = "text" />
+              </form>
+              );
+          }
+        });
+
+        var RegistrationFormThree = React.createClass({
+          render: function() {
+            return (
+              <form className="registrationFormThree">
               <RegistrationItem value = "Resume" name = "resume" type = "file" />
               <RegistrationItem value = "Github Username" name = "github-username" type = "text" />
               <RegistrationItem value = "LinkedIn Address" name = "linkedin-address" type = "text" />
               <RegistrationItem value = "Twitter Handle" name = "twitter-handle" type = "text" />
               <RegistrationItem value = "Personal Website" name = "personal-website" type = "text" />
-
               </form>
               );
           }
