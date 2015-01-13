@@ -7,6 +7,7 @@
 		<link href="/dist/styles.css" rel="stylesheet" type="text/css">
 		<link href="/dist/styles2.css" rel="stylesheet" type="text/css">
 		<script src="/vendor/modernizr/modernizr.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	</head>
 
 <body>
@@ -16,7 +17,7 @@
 		<div class="container" id="login-container">
 			<input id="email-login" class="form-input" placeholder="Email" type="text" name="MERGE1" size="25" value required></input>
 			<input id="password-login" class="form-input" placeholder="Password" type="password" name="MERGE2" size="25" value required></input>
-			<button id="login-button" type="submit" class="btn btn-register">Login</button>
+			<button id="login-button" type="submit" class="btn btn-register" onclick="postRequest()">Login</button>
 		</div>
 		<a id="login-forget-password" href="#">Forget Password?</a>
 	</div>
@@ -24,6 +25,48 @@
 	<footer>
 	    <span>Made with</span> <span class="glyphicon glyphicon-heart"></span> <span>by</span> <a href="http://tudev.org" id="tudev-icon"></a> <span>in Philadelphia</span>
 	</footer>
+
+	<script type="text/javascript" >
+		var emailLoginName ='';
+		var passwordLogin = '';
+
+		function win(){
+			console.log('It worked!');
+		}
+
+		function retreieveLogin(){
+			emailLoginName = $('#email-login').val();
+		}
+
+		function retreievePassword(){
+			passwordLogin = $('#password-login').val();
+		}
+
+		function postRequest(){
+			$.ajax({
+					type: "POST",
+					url: 'http://owlhacks.com/api/checkLogin',
+					data: JSON.stringify({email: retreieveLogin, password: retreievePassword }),
+					success: win(),
+					dataType: JSON
+				});
+		}		
+
+		$('#password-login').keypress(function(e){
+			var p = e.which;
+
+			if ( p == 13 ) {
+				retreieveLogin();
+				retreievePassword()
+
+				postRequest();
+			}
+		});
+
+		
+
+
+	</script>
 </body>
 
 </html>
