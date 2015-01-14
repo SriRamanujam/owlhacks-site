@@ -7,6 +7,7 @@ Tables:
 (note that primary key ID columns are assumed to be present for every table)
 
 Users:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 |first_name | text NOT NULL | User's first name |
@@ -23,37 +24,44 @@ Users:
 |email | text NOT NULL | their email address | 
 
 Accounts:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | user_id | ForeignKey to Users table NOT NULL | Key to account's user entity |
 | status | ForeignKey to Statuses table NOT NULL | Key to Status table |
 
 Schools: 
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | school | text NOT NULL | school name |
 
 Shirt_sizes:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | Shirt_size | varchar(3) NOT NULL | XXS, XS, S, M, L, XL, XXL |
 
 Statuses:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | status | text | waiting, waitlisted, declined, accepted |
 
 Hack_Types:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | type | text | specialized type of hack. Should include a blank row in case they don't specify. |
 
 Allergies:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | allergy | text | name of an allergy |
 
 UserAllergies:
+
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | user_id | ForeignKey to Users table | user who has allergy |
