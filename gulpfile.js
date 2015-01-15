@@ -66,7 +66,8 @@ gulp.task('server-dev', function() {
         ext: 'js',
         ignore: ['public/*'],
         env: {
-            PORT: '3000'
+            PORT: '3000',
+            OWLHACKS_DEV: 'true'
         }
     });
 });
