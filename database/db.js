@@ -4,7 +4,7 @@ if (process.env.OWLHACKS_DEV) {
     dbConfig = {
         client: 'sqlite3',
         connection: {
-            filename: '../dev-db_DO_NOT_PUSH.sqlite3'
+            filename: './dev-db_DO_NOT_PUSH.sqlite3'
         }
     };
 } else {
