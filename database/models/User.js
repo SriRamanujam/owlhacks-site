@@ -1,6 +1,6 @@
 var bookshelf = require('../db'),
     Allergy = require('./Allergies'),
-    Account = require('./Account');
+    Account = require('./Account'),
     School = require('./School'),
     Shirt_Size = require('./Shirt_size'),
     Hack_Type = require('./Hack_type');

@@ -1,4 +1,4 @@
-var bookshelf = require('../db),
+var bookshelf = require('../db'),
     User = require('./User');
 
 var shirt_size = bookshelf.Model.extend({
