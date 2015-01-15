@@ -31,5 +31,10 @@ node_modules
 public/dist
 public/vendor
 
+#
+Ignore sqlite databases
+*.sqlite*
+*.db3
+
 # OSX
 .DS_Store
