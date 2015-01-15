@@ -28,7 +28,7 @@ Accounts:
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
 | user_id | ForeignKey to Users table NOT NULL | Key to account's user entity |
-| status | ForeignKey to Statuses table NOT NULL | Key to Status table |
+| status_id | ForeignKey to Statuses table NOT NULL | Key to Status table |
 
 Schools: 
 
@@ -46,7 +46,7 @@ Statuses:
 
 | Column name | Data type | Description |
 | ----------- | --------- | ----------- |
-| status | text | waiting, waitlisted, declined, accepted |
+| account_status | text | waiting, waitlisted, declined, accepted |
 
 Hack_Types:
 
