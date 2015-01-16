@@ -1,4 +1,5 @@
-var bookshelf = require('./db');
+var bookshelf = require('../db');
+var async = require('async');
 
 var createSchoolsTable = function() {
     bookshelf.knex.schema.createTable('Schools', function(t) {
@@ -89,5 +90,15 @@ var createTables = function() {
     createAccountsTable();
     createUserAllergiesTable();
 };
-
+async.series([
+    function(cb) {
+        createTables();
+        cb();
+    },
+    function(cb) {
+        bookshelf.knex.destroy(cb);
+    }
+]);
+/*
 module.exports = createTables;
+*/
