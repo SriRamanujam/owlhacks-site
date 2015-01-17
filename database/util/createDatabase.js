@@ -84,6 +84,16 @@ var createUserAllergiesTable = function(cb) {
     });
 };
 
+var createShirtSizesTable = function(cb) {
+    bookshelf.knex.schema.createTable('Shirt_Sizes', function(t) {
+        t.increments('id');
+        t.string('size', 3);
+    }).then(function() {
+        console.log('created shirt size table');
+        cb();
+    });
+};
+
 /**
  * The tables have to be created in the proper order, so that the db doesn't get
  * annoyed that tables are being referenced that don't exist yet. At the end, we
@@ -96,6 +106,9 @@ var doTheThing = function() {
         },
         function(cb) {
             createStatusesTable(cb);
+        },
+        function(cb) {
+            createShirtSizesTable(cb);
         },
         function(cb) {
             createHackTypesTable(cb);
@@ -118,4 +131,9 @@ var doTheThing = function() {
     ]);
 };
 
-doTheThing();
+var actuallyDoTheThing = function(cb) {
+    doTheThing();
+    cb();
+};
+
+module.exports = actuallyDoTheThing;

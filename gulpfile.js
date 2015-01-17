@@ -73,7 +73,11 @@ gulp.task('server-dev', function() {
 });
 
 gulp.task('create-database', function() {
-    require('./database/util/createDatabase');
+    async.series([
+        function(cb) {
+            require('./database/util/createDatabase')(cb);
+        }
+    ]);
 });
 
 gulp.task('githook', function() {
