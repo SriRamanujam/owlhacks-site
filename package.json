@@ -38,6 +38,8 @@
     "sqlite3": "^3.0.4"
   },
   "dependencies": {
+    "bcrypt": "^0.8.0",
+    "bluebird": "^2.7.1",
     "bookshelf": "^0.7.9",
     "express": "^4.9.8",
     "knex": "^0.7.3",

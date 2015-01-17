@@ -11,13 +11,12 @@ var Promise = require('bluebird'),
 var User = bookshelf.Model.extend({
     tableName: 'Users',
 
+    //TODO
     update: function(new_fields) {
-        //TODO
-        
     },
 
+    //TODO
     verifyPassword: Promise.method(function(password) {
-        //TODO
         if (!password) throw new Error("Invalid password");
         return bcrypt.compareAsync(this.get('password'), password); // does this work?
     }),
