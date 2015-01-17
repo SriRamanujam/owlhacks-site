@@ -72,6 +72,20 @@ gulp.task('server-dev', function() {
     });
 });
 
+gulp.task('insert-test-values', function() {
+    async.series([
+        function(cb) {
+            require('./database/util/insertSchoolsData')(cb);
+        },
+        function(cb) {
+            require('./database/util/insertHackTypeData')(cb);
+        },
+        function(cb) {
+            require('./database/util/insertShirtSizeData')(cb);
+        }
+    ]);
+});
+
 gulp.task('create-database', function() {
     async.series([
         function(cb) {
